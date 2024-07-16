@@ -1,0 +1,11 @@
+version: 'v2.27.1-desktop.1'
+services:
+  docker-carina:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - './target/:/docker-carina/target'
+      - './reports/:/docker-carina/reports'
+    environment:
+      - "SUITE=api"
